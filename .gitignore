@@ -1,0 +1,11 @@
+/auto-save-list
+/elpa
+/elpa-*
+/.mc-lists.el
+/eshell/
+/tramp
+/transient/
+*~
+\#*
+/racket-mode/
+/url/

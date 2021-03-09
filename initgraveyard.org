@@ -1,0 +1,34 @@
+* Aesthetics
+
+ ;; '(custom-enabled-themes '(smart-orange))
+ ;; '(custom-safe-themes
+ ;;   '("2758ce000a4abc19adbb35a7349bd30f0db1a2b81e2965e2f00b1c093436510a" "a8c99d5db39a5e14179a7f590f29be951f7cb48b376617a0ed20c7800843779d" "15aac73660af033eb3f25cdb8dab5df365b573346d4b4ec3272f6db8b251ceaf" "c1d4aaa3aa729df2513bf6dc03d96ed57f5020be8cd8e4d3a6ec2f64950bbba2" "7675ffd2f5cb01a7aab53bcdd702fa019b56c764900f2eea0f74ccfc8e854386" "e61752b5a3af12be08e99d076aedadd76052137560b7e684a8be2f8d2958edc3" "635fe07615592e5a641ae61180e08f938bbe6c8d077a9a98a7bcf056fcc2ad5b" "ae65ccecdcc9eb29ec29172e1bfb6cadbe68108e1c0334f3ae52414097c501d2" "828d47ac5f3c9c5c06341b28a1d0ebd9f0a0a9c4074504626148f36c438321c2" "6f9fc46380ff9f00da8c10b47bfb01341fe4d8a0e68dffffb0c0ba1d2cd887d8" default))
+ ;; '(powerline-color1 "#6D3300")
+ ;; '(powerline-color2 "#411E00")
+ ;; '(region ((t (:background "#af1b08"))))
+
+
+* BOON
+;; ;; (boon-mode 1)
+;; (add-to-list 'load-path "~/lisp/myboon/")
+;; (require 'boon-seins-qwerty)
+;; (boon-mode) ;; to enable boon everywhere
+;; (require 'boon-tutorial)
+;; (define-key boon-command-map (kbd "/") 'other-window)
+;; (define-key boon-moves-map "/" 'boonC-word)
+;; (defun boonC-word ()
+;;   (interactive)
+;;   (boon-mark-region (call-interactively 'boon-select-word))
+;;   )
+
+* ORG
+;; (add-hook 'org-mode-hook 'visual-line-mode)
+
+* Key Chords
+;(require 'key-chord)
+
+;(setq key-chord-two-keys-delay .015
+;;      key-chord-one-key-delay .020)
+
+;(key-chord-define-global " d" 'delete-backward-char)
+;;(key-chord-mode +1)
