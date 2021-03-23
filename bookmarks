@@ -2,7 +2,23 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("La Bibbia di Gerusalemme.pdf"
+(("Schelling, F. - Sämmtliche Werke.pdf"
+ (filename . "~/Books/Philosophy/Schelling/otherlangauges/Schelling, F. - Sämmtliche Werke.pdf")
+ (position . 1)
+ (page . 2405)
+ (slice)
+ (size . fit-width)
+ (origin 0.0 . 0.4366143240137878)
+ (handler . pdf-view-bookmark-jump-handler))
+("WeltalterDissertation.pdf"
+ (filename . "~/Books/Philosophy/German Idealism Scholarship/WeltalterDissertation.pdf")
+ (position . 1)
+ (page . 146)
+ (slice)
+ (size . 2.0399159663865545)
+ (origin 0.11541632316570487 . 0.4087463556851312)
+ (handler . pdf-view-bookmark-jump-handler))
+("La Bibbia di Gerusalemme.pdf"
  (filename . "~/Books/Religion/La Bibbia di Gerusalemme.pdf")
  (position . 1)
  (page . 57)
@@ -11,8 +27,8 @@
  (origin 0.0 . 0.39701948796331676)
  (handler . pdf-view-bookmark-jump-handler))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/wikorg/journal.org")
- (front-context-string . "**** [2021-03-06")
- (rear-context-string . "-03-06 Saturday\n")
- (position . 12762))
+ (filename . "~/Dropbox/wikorg/agenda.org")
+ (front-context-string . "** TODO Migrate ")
+ (rear-context-string . "relatorio.org]]\n")
+ (position . 4399))
 )

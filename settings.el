@@ -61,6 +61,24 @@
   ("h" (dired "~/") "Home")
   )
 
+(require 'openwith)
+
+(setq openwith-associations
+'(("\\.pd\\'" "zathura" (file))
+("\\.odt\\'" "libreoffice"(file))
+("\\.djvu\\'" "zathura" (file))
+("\\.epub\\'" "zathura" (file))
+("\\.doc\\'" "libreoffice" (file))
+("\\.rtf\\'" "libreoffice" (file))
+("\\.flac\\'" "mpv" (file))
+("\\.cbr\\'" "mcomix" (file))
+("\\.azw3\\'" "ebook-viewer" (file))
+("\\.azw\\'" "ebook-viewer" (file))
+("\\.mobi\\'" "ebook-viewer" (file))
+)
+)
+(openwith-mode t)
+
 (global-set-key (kbd "<S-SPC>") 'delete-backward-char)
 (pdf-tools-install)
 (which-key-mode)
@@ -70,7 +88,13 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 (setenv "SSH_ASKPASS" "git-gui--askpass")
 (add-hook 'magit-mode-hook 'visual-line-mode)
-(global-set-key (kbd "<f5>") 'ibuffer)
+ (global-set-key (kbd "<f5>") 'ibuffer)
+
+(defun eval-region-and-deactivate ()
+     (interactive)
+     (when (use-region-p)
+    (eval-region (region-beginning) (region-end)))
+    (deactivate-mark t))
 
 (use-package peep-dired
   :ensure t
@@ -97,6 +121,7 @@
   (define-key xah-fly-command-map (kbd "M") #'xah-backward-quote)
   (define-key xah-fly-command-map (kbd "U") #'backward-sentence)
   (define-key xah-fly-leader-key-map (kbd "z") 'hydra-dired/body)
+  (define-key xah-fly-leader-key-map (kbd "9") 'flyspell-buffer)
     )
 
 (defun insert-delete (b e)
