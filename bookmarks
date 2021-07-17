@@ -2,7 +2,20 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("Schelling, F. - Sämmtliche Werke.pdf"
+(("xahleader.org"
+ (filename . "~/xahleader.org")
+ (front-context-string . " Overriding Bind")
+ (rear-context-string)
+ (position . 1))
+("monism.pdf"
+ (filename . "~/Dropbox/Academic/Philosophy/Schaffer/monism.pdf")
+ (position . 1)
+ (page . 8)
+ (slice)
+ (size . 2.314814814814815)
+ (origin 0.09 . 0.12)
+ (handler . pdf-view-bookmark-jump-handler))
+("Schelling, F. - Sämmtliche Werke.pdf"
  (filename . "~/Books/Philosophy/Schelling/otherlangauges/Schelling, F. - Sämmtliche Werke.pdf")
  (position . 1)
  (page . 2405)
@@ -28,7 +41,7 @@
  (handler . pdf-view-bookmark-jump-handler))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/wikorg/agenda.org")
- (front-context-string . "** TODO Migrate ")
- (rear-context-string . "relatorio.org]]\n")
- (position . 4399))
+ (front-context-string . "** TODO reread t")
+ (rear-context-string . "entity of God]]\n")
+ (position . 7612))
 )
