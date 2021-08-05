@@ -5,53 +5,59 @@
 
 (require 'org)
 
-    (add-hook 'org-mode-hook 'turn-on-flyspell)
-    (add-hook 'org-mode-hook 'auto-fill-mode)
-    (add-hook 'org-mode-hook 'nlinum-relative-mode)
-    (defun my-org-insert-file ()
-      (interactive)
-      (let ((current-prefix-arg '(4)))
-	(call-interactively 'org-insert-link)
-	))
+	  (add-hook 'org-mode-hook 'turn-on-flyspell)
+	  (add-hook 'org-mode-hook 'auto-fill-mode)
+	  (add-hook 'org-mode-hook 'nlinum-relative-mode)
+	  (defun my-org-insert-file ()
+	    (interactive)
+	    (let ((current-prefix-arg '(4)))
+	      (call-interactively 'org-insert-link)
+	      ))
 
 
-    (global-set-key (kbd "C-c f") 'my-org-insert-file)
-    (global-set-key (kbd "C-c i") 'ispell-word)
-    (global-set-key (kbd "C-c x") 'my-id-get-or-generate)
-    (global-set-key (kbd "C-c c") 'reftex-citation)
-    (global-set-key (kbd "C-c h") 'org-wc-display)
+	  (global-set-key (kbd "C-c f") 'my-org-insert-file)
+	  (global-set-key (kbd "C-c i") 'ispell-word)
+	  (global-set-key (kbd "C-c x") 'my-id-get-or-generate)
+	  (global-set-key (kbd "C-c c") 'reftex-citation)
+	  (global-set-key (kbd "C-c h") 'org-wc-display)
 
-    (require 'goto-chg)
-    (global-set-key (kbd "C-c g") 'goto-last-change)
+	  (require 'goto-chg)
+	  (global-set-key (kbd "C-c g") 'goto-last-change)
 
-    (setq magit-diff-options (list "--word-diff=color")) 
+	  (setq magit-diff-options (list "--word-diff=color")) 
 
-    (setq org-capture-templates
-	  '(
-	  ("t"
-	  "Todo list item"
-	  entry
-	  (file+headline org-default-notes-file "Tasks")
-	  "* TODO %?\n %i\n %a")
-	  ("j"
-	  "Journal Entry"
-	  entry (file+datetree "~/Dropbox/wikorg/journal.org")
-	  (file "~/Dropbox/dotfiles/templates/journaltemplate.org")
-	  )))
+	  (setq org-capture-templates
+		'(
+		("t"
+		"Todo list item"
+		entry
+		(file+headline org-default-notes-file "Tasks")
+		"* TODO %?\n %i\n %a")
+		("j"
+		"Journal Entry"
+		entry (file+datetree "~/Dropbox/wikorg/journal.org")
+		(file "~/Dropbox/dotfiles/templates/journaltemplate.org")
+		)))
 
-    (require 'org-tempo)      
-    ;;;; Org Latex
-(with-eval-after-load 'ox-latex
-  (add-to-list 'org-latex-classes
-	     '("abntex2"
-	   "\\documentclass{abntex2}"
-	   ("\\section{%s}" . "\\section*{%s}")
-	   ("\\subsection{%s}" . "\\subsection*{%s}")
-	   ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
+	  (require 'org-tempo)      
+	  ;;;; Org Latex
+      (with-eval-after-load 'ox-latex
+	(add-to-list 'org-latex-classes
+		   '("abntex2"
+		 "\\documentclass{abntex2}"
+		 ("\\section{%s}" . "\\section*{%s}")
+		 ("\\subsection{%s}" . "\\subsection*{%s}")
+		 ("\\subsubsection{%s}" . "\\subsubsection*{%s}"))))
 
-  (setq org-latex-toc-command "\\tableofcontents \\clearpage")
-    (setq org-latex-pdf-process (list
-       "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
+	(setq org-latex-toc-command "\\clearpage \\tableofcontents \\clearpage")
+	(setq org-latex-pdf-process (list
+	     "latexmk -pdflatex='lu alatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
+
+(require 'package)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+
+    (require 'ox-extra)
+    (ox-extras-activate '(ignore-headlines))
 
 (require 'hydra)
 
