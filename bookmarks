@@ -2,7 +2,15 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("xahleader.org"
+(("McTaggart - The Nature of Existence Vol 1.pdf"
+ (filename . "~/Books/Philosophy/british idealism/McTaggart - The Nature of Existence Vol 1.pdf")
+ (position . 1)
+ (page . 114)
+ (slice)
+ (size . fit-width)
+ (origin 0.0 . 0.1460920379839299)
+ (handler . pdf-view-bookmark-jump-handler))
+("xahleader.org"
  (filename . "~/xahleader.org")
  (front-context-string . " Overriding Bind")
  (rear-context-string)
@@ -10,10 +18,10 @@
 ("monism.pdf"
  (filename . "~/Dropbox/Academic/Philosophy/Schaffer/monism.pdf")
  (position . 1)
- (page . 8)
+ (page . 12)
  (slice)
  (size . 2.314814814814815)
- (origin 0.09 . 0.12)
+ (origin 0.09 . 0.16133333333333333)
  (handler . pdf-view-bookmark-jump-handler))
 ("Schelling, F. - Sämmtliche Werke.pdf"
  (filename . "~/Books/Philosophy/Schelling/otherlangauges/Schelling, F. - Sämmtliche Werke.pdf")
@@ -40,8 +48,8 @@
  (origin 0.0 . 0.39701948796331676)
  (handler . pdf-view-bookmark-jump-handler))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/wikorg/agenda.org")
- (front-context-string . "** TODO reread t")
- (rear-context-string . "entity of God]]\n")
- (position . 7612))
+ (filename . "~/Dropbox/wikorg/journal.org")
+ (front-context-string . "**** [2021-08-11")
+ (rear-context-string . "n selbst seyn. \n")
+ (position . 274317))
 )

@@ -48,7 +48,7 @@
      ("v" . "verse")
      ("n" . "citacao")))
  '(package-selected-packages
-   '(org-plus-contrib auctex nov goto-chg org-wc edit-server moe-theme rainbow-delimiters peep-dired dired-du company olivetti ssh-agency command-log-mode xah-fly-keys paredit use-package magit nlinum-relative racket-mode slime openwith hydra key-chord avy which-key counsel boon))
+   '(auctex-latexmk org-plus-contrib auctex nov goto-chg org-wc edit-server moe-theme rainbow-delimiters peep-dired dired-du company olivetti ssh-agency command-log-mode xah-fly-keys paredit use-package magit nlinum-relative racket-mode slime openwith hydra key-chord avy which-key counsel boon))
  '(powerline-color1 "#6D3300")
  '(powerline-color2 "#411E00")
  '(reftex-cite-format "\\cite[]{%l}")
