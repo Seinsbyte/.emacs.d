@@ -12,7 +12,7 @@
 	      (require 'org)
   
 	      (add-hook 'org-mode-hook 'turn-on-flyspell)
-	      (add-hook 'org-mode-hook 'auto-fill-mode)
+	      ;; (add-hook 'org-mode-hook 'auto-fill-mode)
 	      (add-hook 'org-mode-hook 'nlinum-relative-mode)
 	      (defun my-org-insert-file ()
 		(interactive)
@@ -134,36 +134,35 @@
 * General
 
   #+begin_src emacs-lisp
-	(pdf-tools-install)
-    
-     (getenv "PATH")
-     (setenv "PATH"
-    (concat
-     "/usr/texbin" ":"
-     (getenv "PATH")))
-    
-    
-	(which-key-mode)
-	(setq inferior-lisp-program "sbcl")
-	(require 'smartparens-config)
-	;; change all prompts to y or n
-	(fset 'yes-or-no-p 'y-or-n-p)
-	(setenv "SSH_ASKPASS" "git-gui--askpass")
-	(add-hook 'magit-mode-hook 'visual-line-mode)
-    
-    
-    
-	(global-set-key (kbd "<f5>") 'ibuffer)
-	(global-set-key (kbd "C-c l") 'org-store-link)
-	;; (global-set-key (kbd "C-c t") 'org-capture)
-	(global-set-key (kbd "C-c a") 'org-agenda)
-	(global-set-key (kbd "C-c w") 'search-web)
-    
-	(global-set-key (kbd "C-c j")
-	(lambda () (interactive) (org-capture nil "j")))
-    
-	(global-set-key (kbd "C-c t")
-	(lambda () (interactive) (org-capture nil "t")))
+	    (pdf-tools-install)
+	  (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode)
+
+    (desktop-read)
+    (desktop-save-mode 1)
+
+	
+	
+	    (which-key-mode)
+	    (setq inferior-lisp-program "sbcl")
+	    (require 'smartparens-config)
+	    ;; change all prompts to y or n
+	    (fset 'yes-or-no-p 'y-or-n-p)
+	    (setenv "SSH_ASKPASS" "git-gui--askpass")
+	    (add-hook 'magit-mode-hook 'visual-line-mode)
+	
+	
+	
+	    (global-set-key (kbd "<f5>") 'ibuffer)
+	    (global-set-key (kbd "C-c l") 'org-store-link)
+	    ;; (global-set-key (kbd "C-c t") 'org-capture)
+	    (global-set-key (kbd "C-c a") 'org-agenda)
+	    (global-set-key (kbd "C-c w") 'search-web)
+	
+	    (global-set-key (kbd "C-c j")
+	    (lambda () (interactive) (org-capture nil "j")))
+	
+	    (global-set-key (kbd "C-c t")
+	    (lambda () (interactive) (org-capture nil "t")))
   #+end_src
 
 * Dired
@@ -194,61 +193,63 @@
   #+end_src
 * XAH
   #+begin_src emacs-lisp
-
-	(require 'xah-fly-keys)
-	(xah-fly-keys-set-layout "qwerty") ; required
-	(xah-fly-keys)
-
-	(with-eval-after-load 'xah-fly-keys
-	  ;; Command mode keybindings:
-	  (define-key xah-fly-insert-map (kbd "<escape>") #'xah-fly-command-mode-activate-no-hook)
-	  (define-key xah-fly-command-map (kbd "2") #'eval-region-and-deactivate)
-	  (define-key xah-fly-command-map (kbd "G") #'insert-delete)
-	  (define-key xah-fly-command-map (kbd "O") #'forward-sentence)
-	  (define-key xah-fly-command-map (kbd ">") #'xah-forward-quote-smart)
-	  (define-key xah-fly-command-map (kbd "M") #'xah-backward-quote)
-	  (define-key xah-fly-command-map (kbd "U") #'backward-sentence)
-	  (define-key xah-fly-leader-key-map (kbd "z") 'hydra-dired/body)
-	  (define-key xah-fly-leader-key-map (kbd "9") 'flyspell-buffer)
-	  (define-key xah-fly-leader-key-map (kbd "8") 'ispell-word)
-	  (define-key xah-fly-e-keymap (kbd "s") 'xah-insert-fslash)
-	  (define-key xah-fly-e-keymap (kbd "a") 'xah-insert-asterisk)
-	    )
-
-	(defun insert-delete (b e)
-	  (interactive "*r")
-		       (kill-region b e)
-		       (xah-fly-insert-mode-activate))
-
-	(with-eval-after-load 'pdf-view
-	  (define-key pdf-view-mode-map [remap next-line] #'pdf-view-next-line-or-next-page)
-	  (define-key pdf-view-mode-map [remap previous-line] #'pdf-view-previous-line-or-previous-page)
-      	  (define-key pdf-view-mode-map [remap xah-copy-line-or-region] #'pdf-view-kill-ring-save)
-	  (define-key pdf-view-mode-map [remap forward-word] #'pdf-outline))
-
-	(defun pdf-config-xah-fly-key ()
-	  "Modify keys for xah fly key command mode keys
-	To be added to `xah-fly-command-mode-activate-hook'"
-	  (interactive)
-	  (define-key xah-fly-leader-key-map (kbd "c") 'pdf-view-kill-ring-save)
-	  )
-
-
-	(defun pdf-xah-wrapper ()
-	  "call different commands depending on what's current major mode."
-	  (interactive)
-	  (cond
-	   ((string-equal major-mode "pdf-view-mode") ((add-hook 'xah-fly-command-mode-activate-hook 'pdf-config-xah-fly-key)))
-	   ;; if nothing match, do nothing
-	   (t nil)))
-
-    (defun xah-insert-fslash ()
-      (interactive)
-      (xah-insert-bracket-pair "/" "/") )
-
-    (defun xah-insert-asterisk ()
-      (interactive)
-      (xah-insert-bracket-pair "*" "*") )
+	    
+		(require 'xah-fly-keys)
+		(xah-fly-keys-set-layout "qwerty") ; required
+		(xah-fly-keys)
+	    
+		(with-eval-after-load 'xah-fly-keys
+		  ;; Command mode keybindings:
+		  (define-key xah-fly-insert-map (kbd "<escape>") #'xah-fly-command-mode-activate-no-hook)
+		  (define-key xah-fly-command-map (kbd "2") #'eval-region-and-deactivate)
+		  (define-key xah-fly-command-map (kbd "G") #'insert-delete)
+		  (define-key xah-fly-command-map (kbd "O") #'forward-sentence)
+		  (define-key xah-fly-command-map (kbd ">") #'xah-forward-quote-smart)
+		  (define-key xah-fly-command-map (kbd "M") #'xah-backward-quote)
+		  (define-key xah-fly-command-map (kbd "U") #'backward-sentence)
+		  (define-key xah-fly-leader-key-map (kbd "z") 'hydra-dired/body)
+		  (define-key xah-fly-leader-key-map (kbd "9") 'flyspell-buffer)
+		  (define-key xah-fly-leader-key-map (kbd "8") 'ispell-word)
+		  (define-key xah-fly-e-keymap (kbd "s") 'xah-insert-fslash)
+		  (define-key xah-fly-e-keymap (kbd "a") 'xah-insert-asterisk)
+		    )
+	    
+		(defun insert-delete (b e)
+		  (interactive "*r")
+			       (kill-region b e)
+			       (xah-fly-insert-mode-activate))
+	    
+		(with-eval-after-load 'pdf-view
+		  (define-key pdf-view-mode-map [remap next-line] #'pdf-view-next-line-or-next-page)
+		  (define-key pdf-view-mode-map [remap xah-delete-backward-char-or-bracket-text] #'pdf-view-next-line-or-next-page)
+		  (define-key pdf-view-mode-map [remap previous-line] #'pdf-view-previous-line-or-previous-page)
+		  (define-key pdf-view-mode-map [remap xah-backward-kill-word] #'pdf-view-previous-line-or-previous-page)
+		  (define-key pdf-view-mode-map [remap xah-copy-line-or-region] #'pdf-view-kill-ring-save)
+		  (define-key pdf-view-mode-map [remap forward-word] #'pdf-outline))
+	    
+		(defun pdf-config-xah-fly-key ()
+		  "Modify keys for xah fly key command mode keys
+		To be added to `xah-fly-command-mode-activate-hook'"
+		  (interactive)
+		  (define-key xah-fly-leader-key-map (kbd "c") 'pdf-view-kill-ring-save)
+		  )
+	    
+	    
+		(defun pdf-xah-wrapper ()
+		  "call different commands depending on what's current major mode."
+		  (interactive)
+		  (cond
+		   ((string-equal major-mode "pdf-view-mode") ((add-hook 'xah-fly-command-mode-activate-hook 'pdf-config-xah-fly-key)))
+		   ;; if nothing match, do nothing
+		   (t nil)))
+	    
+	    (defun xah-insert-fslash ()
+	      (interactive)
+	      (xah-insert-bracket-pair "/" "/") )
+	    
+	    (defun xah-insert-asterisk ()
+	      (interactive)
+	      (xah-insert-bracket-pair "*" "*") )
   #+end_src
   
 * Ivy

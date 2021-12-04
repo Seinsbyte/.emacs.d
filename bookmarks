@@ -49,7 +49,7 @@
  (handler . pdf-view-bookmark-jump-handler))
 ("org-capture-last-stored"
  (filename . "~/Dropbox/wikorg/journal.org")
- (front-context-string . "**** [2021-08-11")
- (rear-context-string . "n selbst seyn. \n")
- (position . 274317))
+ (front-context-string . "**** [2021-09-28")
+ (rear-context-string . "1-09-28 Tuesday\n")
+ (position . 360273))
 )

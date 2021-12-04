@@ -48,7 +48,7 @@
      ("v" . "verse")
      ("n" . "citacao")))
  '(package-selected-packages
-   '(auctex-latexmk org-plus-contrib auctex nov goto-chg org-wc edit-server moe-theme rainbow-delimiters peep-dired dired-du company olivetti ssh-agency command-log-mode xah-fly-keys paredit use-package magit nlinum-relative racket-mode slime openwith hydra key-chord avy which-key counsel boon))
+   '(pdf-view-restore mpages auctex-latexmk org-plus-contrib auctex nov goto-chg org-wc edit-server moe-theme rainbow-delimiters peep-dired dired-du company olivetti ssh-agency command-log-mode xah-fly-keys paredit use-package magit nlinum-relative racket-mode slime openwith hydra key-chord avy which-key counsel boon))
  '(powerline-color1 "#6D3300")
  '(powerline-color2 "#411E00")
  '(reftex-cite-format "\\cite[]{%l}")
@@ -66,7 +66,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Fantasque Sans Mono" :size 18 :foundry "PfEd" :slant normal :weight normal :height 143 :width normal))))
+ '(default ((t (:family "Fantasque Sans Mono" :size 16 :foundry "PfEd" :slant normal :weight normal :height 143 :width normal))))
  '(link ((t (:foreground "#869ed6"))))
  '(rainbow-delimiters-depth-1-face ((t (:foreground "gold" :weight bold))))
  '(region ((t nil))))

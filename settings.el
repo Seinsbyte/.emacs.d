@@ -6,7 +6,7 @@
 (require 'org)
 
 	    (add-hook 'org-mode-hook 'turn-on-flyspell)
-	    (add-hook 'org-mode-hook 'auto-fill-mode)
+	    ;; (add-hook 'org-mode-hook 'auto-fill-mode)
 	    (add-hook 'org-mode-hook 'nlinum-relative-mode)
 	    (defun my-org-insert-file ()
 	      (interactive)
@@ -51,7 +51,7 @@
 
 	  (setq org-latex-toc-command "\\clearpage \\tableofcontents \\clearpage")
 	  (setq org-latex-pdf-process (list
-	       "latexmk -pdflatex='lu alatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
+	       "latexmk -pdflatex='lualatex -shell-escape -interaction nonstopmode' -pdf -f  %f"))
 
   (require 'package)
   (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
@@ -112,35 +112,34 @@
   (openwith-mode t)
 
 (pdf-tools-install)
+      (add-hook 'pdf-view-mode-hook 'pdf-view-restore-mode)
 
- (getenv "PATH")
- (setenv "PATH"
-(concat
- "/usr/texbin" ":"
- (getenv "PATH")))
-
-
-    (which-key-mode)
-    (setq inferior-lisp-program "sbcl")
-    (require 'smartparens-config)
-    ;; change all prompts to y or n
-    (fset 'yes-or-no-p 'y-or-n-p)
-    (setenv "SSH_ASKPASS" "git-gui--askpass")
-    (add-hook 'magit-mode-hook 'visual-line-mode)
+(desktop-read)
+(desktop-save-mode 1)
 
 
 
-    (global-set-key (kbd "<f5>") 'ibuffer)
-    (global-set-key (kbd "C-c l") 'org-store-link)
-    ;; (global-set-key (kbd "C-c t") 'org-capture)
-    (global-set-key (kbd "C-c a") 'org-agenda)
-    (global-set-key (kbd "C-c w") 'search-web)
+	(which-key-mode)
+	(setq inferior-lisp-program "sbcl")
+	(require 'smartparens-config)
+	;; change all prompts to y or n
+	(fset 'yes-or-no-p 'y-or-n-p)
+	(setenv "SSH_ASKPASS" "git-gui--askpass")
+	(add-hook 'magit-mode-hook 'visual-line-mode)
 
-    (global-set-key (kbd "C-c j")
-    (lambda () (interactive) (org-capture nil "j")))
 
-    (global-set-key (kbd "C-c t")
-    (lambda () (interactive) (org-capture nil "t")))
+
+	(global-set-key (kbd "<f5>") 'ibuffer)
+	(global-set-key (kbd "C-c l") 'org-store-link)
+	;; (global-set-key (kbd "C-c t") 'org-capture)
+	(global-set-key (kbd "C-c a") 'org-agenda)
+	(global-set-key (kbd "C-c w") 'search-web)
+
+	(global-set-key (kbd "C-c j")
+	(lambda () (interactive) (org-capture nil "j")))
+
+	(global-set-key (kbd "C-c t")
+	(lambda () (interactive) (org-capture nil "t")))
 
 (use-package peep-dired
   :ensure t
