@@ -48,8 +48,8 @@
  (origin 0.0 . 0.39701948796331676)
  (handler . pdf-view-bookmark-jump-handler))
 ("org-capture-last-stored"
- (filename . "~/Dropbox/wikorg/journal.org")
- (front-context-string . "**** [2021-09-28")
- (rear-context-string . "1-09-28 Tuesday\n")
- (position . 360273))
+ (filename . "~/Dropbox/wikorg/agenda.org")
+ (front-context-string . "** TODO maybe us")
+ (rear-context-string . "pdf::%PDF-1.5]]\n")
+ (position . 4907))
 )

@@ -188,7 +188,9 @@
 
     (with-eval-after-load 'pdf-view
       (define-key pdf-view-mode-map [remap next-line] #'pdf-view-next-line-or-next-page)
+      (define-key pdf-view-mode-map [remap xah-delete-backward-char-or-bracket-text] #'pdf-view-next-line-or-next-page)
       (define-key pdf-view-mode-map [remap previous-line] #'pdf-view-previous-line-or-previous-page)
+      (define-key pdf-view-mode-map [remap xah-backward-kill-word] #'pdf-view-previous-line-or-previous-page)
       (define-key pdf-view-mode-map [remap xah-copy-line-or-region] #'pdf-view-kill-ring-save)
       (define-key pdf-view-mode-map [remap forward-word] #'pdf-outline))
 
